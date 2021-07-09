@@ -6,17 +6,17 @@
 
 import pandas as pd
 
-df = pd.read_excel ('MR 4G Bali_Ver2.xlsx') #place "r" before the path string to address special character, such as '\'. Don't forget to put the file name at the end of the path + '.xlsx'
+df = pd.read_excel ('aaaa.xlsx') 
 df.head()
 
 
 # In[2]:
 
 
-df.drop("No", axis=1, inplace=True)
-df.drop("Site TBG", axis=1, inplace=True)
-df.drop("Lat TBG", axis=1, inplace=True)
-df.drop("Long TBG", axis=1, inplace=True)
+df.drop("A", axis=1, inplace=True)
+df.drop("B", axis=1, inplace=True)
+df.drop("C", axis=1, inplace=True)
+df.drop("D", axis=1, inplace=True)
 df.head()
 
 
