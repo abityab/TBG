@@ -5,24 +5,24 @@
 
 
 import pandas as pd
-df = pd.read_excel ('MR 4G Bali & Other TP & Other OP.xlsx')
-df.head()
+#df = pd.read_excel ('')
+#df.head()
 
 
 # In[2]:
 
 
-df.drop("Site TBG", axis=1, inplace=True)
-df.drop("Lat TBG", axis=1, inplace=True)
-df.drop("Long TBG", axis=1, inplace=True)
-df.drop("No", axis=1, inplace=True)
+df.drop("A", axis=1, inplace=True)
+df.drop("B", axis=1, inplace=True)
+df.drop("C", axis=1, inplace=True)
+df.drop("D", axis=1, inplace=True)
 df.head()
 
 
 # In[3]:
 
 
-df["COLO"].replace({"-": "Build"}, inplace=True)
+df["A"].replace({"-": "Testing"}, inplace=True)
 
 print(df)
 
