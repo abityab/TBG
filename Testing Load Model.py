@@ -10,7 +10,7 @@ import pickle
 # In[51]:
 
 
-with open("testsave2.pkl", 'rb') as file:  
+with open("TestingAja.pkl", 'rb') as file:  
     Pickled_RF_Model = pickle.load(file)
 
 Pickled_RF_Model
@@ -32,19 +32,19 @@ for x,y,z in row:
     inputan = [[x,y,z]]
     hasil = Pickled_LR_Model.predict(inputan)
     if hasil == 0:
-        print(inputan, "Build")
+        print(inputan, "A")
     elif hasil == 1:
-        print(inputan,"H3I DT")
+        print(inputan,"B")
     elif hasil == 2:
-        print(inputan,"ISAT DT")
+        print(inputan,"C")
     elif hasil == 3:
-        print(inputan,"Protel")
+        print(inputan,"D")
     elif hasil == 4:
-        print(inputan,"TSEL DT")
+        print(inputan,"E")
     elif hasil == 5:
-        print(inputan,"XL MR")
+        print(inputan,"F")
     elif hasil == 6:
-        print(inputan,"XL DT")
+        print(inputan,"G")
 
 
 # In[ ]:
