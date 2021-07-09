@@ -32,7 +32,7 @@ bot = telebot.TeleBot(botToken)
 
 @bot.message_handler(commands=['help'])
 def help_message(message):
-    pesan = 'Manual Penggunan Bot Telegram\nKetik nilai RSRP,Lat,Long untuk mendapatkan prediksi COLO\n    contoh :\n    -110.06, -8.68216, 115.197    \n\nNote :\nPemisah nilainya pakai titik ya untuk pemisah antar parameter pakai koma'
+    pesan = 'Separator menggunakan koma'
     bot.reply_to(message, pesan)
 
 
@@ -50,26 +50,26 @@ def handle_all_message(message):
             hasil = Pickled_RF_Model.predict([[x,y,z]])
             time.sleep(1)
             if hasil == 0:
-                hasil = "Build"
+                hasil = "A"
             elif hasil == 1:
-                hasil = "H3I DT"
+                hasil = "B"
             elif hasil == 2:
-                hasil = "ISAT DT"
+                hasil = "C"
             elif hasil == 3:
-                hasil = "Protel"
+                hasil = "D"
             elif hasil == 4:
-                hasil = "TSEL DT"
+                hasil = "E"
             elif hasil == 5:
-                hasil = "XL MR"
+                hasil = "F"
             elif hasil == 6:
-                hasil = "XL DT"
+                hasil = "G"
 
             bot.reply_to(message, f'Hasil klasifikasi data\n {x},{y},{z} = {hasil}')
 
 #             bot.reply_to(message, f'nilai x : {x}, nilai y : {y}, nilai z : {z}')
         
     except:
-        pesan = 'Format Inputan yg anda masukkan Salah\nKetik nilai RSRP,Lat,Long\n        contoh :\n        -110.06, -8.68216, 115.197        \n\nNote :\nPemisah nilainya pakai titik ya untuk pemisah antar parameter pakai koma'
+        pesan = 'Separator menggunakan koma'
 
         bot.reply_to(message, pesan)
 
@@ -78,7 +78,7 @@ def handle_all_message(message):
 
 
 try:
-    print('BOT Machine Learning COLO RUNNING')
+    print('Running')
     bot.polling(none_stop=True)
 except:
     quit()
@@ -99,28 +99,26 @@ def handle_all_message(message):
         hasil = Pickled_RF_Model.predict([[x,y,z]])
         time.sleep(1)
         if hasil == 0:
-            hasil = "Build"
+            hasil = "A"
         elif hasil == 1:
-            hasil = "H3I DT"
+            hasil = "B"
         elif hasil == 2:
-            hasil = "ISAT DT"
+            hasil = "C"
         elif hasil == 3:
-            hasil = "Protel"
+            hasil = "D"
         elif hasil == 4:
-            hasil = "TSEL DT"
+            hasil = "E"
         elif hasil == 5:
-            hasil = "XL MR"
+            hasil = "F"
         elif hasil == 6:
-            hasil = "XL DT"
+            hasil = "G"
 
         bot.reply_to(message, f'Hasil klasifikasi data {x},{y},{z} = {hasil}')
 
 #         bot.reply_to(message.chat.id, f'nilai x : {x}, nilai y : {y}, nilai z : {z}')
         
     except:
-        pesan = 'Format Inputan yg anda masukkan Salah\nKetik nilai RSRP,Lat,Long\n\
-        contoh :\n\
-        -110.06, -8.68216, 115.197'
+        pesan = 'Format salah\n\'
 
         bot.reply_to(message, pesan)
 
